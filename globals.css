@@ -1,0 +1,67 @@
+:root {
+  --icons-color: #4c5773;
+  --icons-light-color: #4c577341;
+  --icons-bg-color: #e2e6e9;
+  --shadow-dark-color: #d3dae7;
+  --shadow-light-color: #fff;
+  --main-bg-color: #ecf0f3;
+
+  --box-shadow: 1rem 1rem 1rem
+    var(
+      var(--shadow-dark-color),
+      -1rem -1rem 1rem var(var(--shadow-dark-color))
+    );
+
+  --box-shadow-2: 0rem 0rem 0rem
+    var(
+      var(--shadow-dark-color),
+      -0.3rem -0.3rem 1rem var(var(--shadow-dark-color))
+    );
+}
+
+/* html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+} */
+
+/* body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+/* a {
+  color: inherit;
+  text-decoration: none;
+} */
+
+/* *{
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: none;
+} */
+
+::selection {
+  color: var(--shadow-dark-color);
+  background: var(--icons-color);
+}
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: var(--main-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2rem;
+  background: var(--icons-color);
+  width: 2.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
