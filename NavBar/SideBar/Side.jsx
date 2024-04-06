@@ -71,7 +71,17 @@ const Side = ({ setOpenSideMenu }) => {
       link: "sign-in",
     },
   ];
-
+  // const openDiscoverMenu = () => {
+  //   setOpenDiscover(!openDiscover);
+  //   if (openHelp) setOpenHelp(false); // Close the Help Center menu when opening the Discover menu
+  // };
+  
+  // const openHelpMenu = () => {
+  //   setOpenHelp(!openHelp);
+  //   setOpenDiscover(false); // Close the Discover menu when opening the Help Center menu
+  // };
+  
+  
   const openDiscoverMenu = () => {
     if (!openDiscover) {
       setOpenDiscover(true);
@@ -138,10 +148,15 @@ const Side = ({ setOpenSideMenu }) => {
             </div>
           )}
         </div>
-        <div className={Style.sideBar_menu_box} onClick={() => openHelpMenu()}>
-          <p>Help Center</p>
-          <TiArrowSortedDown />
-          {openHelpMenu && (
+        <div>
+          <div
+            className={Style.sideBar_menu_box}
+            onClick={() => openHelpMenu()}
+          >
+            <p>Help Center</p>
+            <TiArrowSortedDown />
+          </div>
+          {openHelp && (
             <div className={Style.sideBar_discover}>
               {helpCenter.map((el, i) => (
                 <p key={i + 1}>
@@ -151,6 +166,7 @@ const Side = ({ setOpenSideMenu }) => {
             </div>
           )}
         </div>
+      
       </div>
       {/* <div className={Style.sideBar_button}>
         <Button btnName="Create" />
