@@ -122,7 +122,7 @@ const NavBar = () => {
           </div>
 
           {/* PROFILE */}
-          <div className={Style.navbar_container_right_profile}>
+          {/* <div className={Style.navbar_container_right_profile}>
             <p
               onClick={(e) => {
                 openMenu(e);
@@ -130,16 +130,24 @@ const NavBar = () => {
             >
               Profile
             </p>
-            {/* {profile && (
+            {profile && (
               <div className={Style.navbar_container_right_profile_box}>
                 <Profile />
               </div>
-            )} */}
-          </div>
-          <div className={Style.navbar_container_right_menu}>
-            <CgMenuLeft className={Style.menu_icon} />
-            <CgMenuRight className={Style.menu_icon} />
-          </div>
+            )}
+          </div> */}
+          {/* <div className={Style.navbar_container_right_menu}>
+            <CgMenuLeft className={Style.menu_icon} /> */}
+            {!openSideMenu && (
+  <div className={Style.navbar_container_right_menuBtn}>
+    <CgMenuRight
+      className={Style.menuIcon}
+      onClick={() => openSideBar()}
+    />
+  </div>   //menubutton should be visible when in mobile view
+)}
+            {/* <CgMenuRight className={Style.menu_icon} /> */}
+          {/* </div> */}
 
           {/* CREATE BUTTON SECTION */}
           <div className={Style.navbar_container_right_button}>
@@ -171,7 +179,7 @@ const NavBar = () => {
       </div>
       {/* SIDEBAR COMPONENT */}
       {openSideMenu && (
-        <div className={Style.SideBar}>
+        <div className={Style.SideBar}>    //it should be Style.sideBar
           <SideBar setOpenSideMenu={setOpenSideMenu} />
         </div>
       )}
